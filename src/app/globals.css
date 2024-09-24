@@ -1,27 +1,99 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* DemoForm.css */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.form-container {
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.form-container h1 {
+  font-size: 2.5rem;
+  color: #3b49e6;
+}
+
+.form-container p {
+  font-size: 16px;
+  padding: 25px 0;
+}
+
+.form-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  color: #3b49e6;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #3b49e6;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.form-actions {
+  grid-column: span 2;
+  
+}
+
+.submit-button {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  background-color: #3b49e6;
+}
+.error-message {
+  color: red;
+  
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .form-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-grid label{
+    text-align: start;
+
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .submit-button {
+    width: 100%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+@media (max-width: 480px) {
+  .form-container h1 {
+    font-size: 2rem;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .form-container p {
+    font-size: 1rem;
+  }
+
+  .submit-button {
+    padding: 0.75rem 1.5rem;
   }
 }
